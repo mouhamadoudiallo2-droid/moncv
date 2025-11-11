@@ -1,0 +1,246 @@
+/* --- Variables et Reset --- */
+:root {
+    --primary-color: #007bff; /* Bleu professionnel et dynamique */
+    --secondary-color: #343a40; /* Couleur sombre pour le texte/fond de navigation */
+    --text-color: #333;
+    --tagline-color: #5a6268; 
+    --background-light: #f8f9fa; /* Fond général très clair */
+    --background-white: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* 2. Barre de Navigation (Header) */
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--background-white);
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: var(--border-radius);
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.current {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* 3. Section Héros (Introduction) et Animation JS/CSS */
+/* (Ce bloc est principalement pour index.html, mais le garder est important) */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
+    text-align: center;
+    min-height: calc(100vh - 80px); /* Ajusté pour centrer sur la page */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem; 
+    background-color: var(--background-white);
+    padding: 3rem 4rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 900px;
+    margin-top: 0; /* Pas de margin-top fixe ici pour mieux centrer */
+
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* 4. Image de Profil */
+.profile-picture-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0 8px var(--primary-color), 0 0 0 10px var(--background-white); 
+    flex-shrink: 0; 
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 5. Contenu Textuel */
+.text-content {
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .text-content {
+        text-align: center;
+    }
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+h1 span {
+    color: var(--primary-color);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--tagline-color);
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* 6. Bouton CTA (Call to Action) */
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    text-decoration: none;
+    padding: 0.9rem 2.5rem; 
+    border-radius: 50px; 
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #0056b3; 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* 7. Styles Spécifiques à la Page Contact - NOUVEAU */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrer verticalement */
+    padding: 4rem 1rem;
+    min-height: calc(100vh - 80px); /* S'assure que la section occupe la hauteur restante */
+}
+
+.contact-card {
+    background-color: var(--background-white);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px; /* Largeur maximale pour le formulaire */
+    width: 100%;
+    text-align: center;
+}
+
+.contact-card h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-card .tagline {
+    color: var(--tagline-color);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* 8. Styles des Éléments de Formulaire */
+.contact-form {
+    text-align: left; /* Alignement du texte à gauche à l'intérieur du formulaire */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block; /* Chaque label sur une nouvelle ligne */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="subject"], /* Assurez-vous d'avoir ce type si vous l'utilisez */
+.form-group textarea {
+    width: 100%; /* Les champs prennent toute la largeur disponible */
+    padding: 12px 15px; /* Padding ajusté */
+    border: 1px solid #ced4da; /* Bordure plus douce */
+    border-radius: var(--border-radius);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); /* Légère ombre interne */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Ombre au focus */
+    outline: none; /* Supprime l'outline par défaut du navigateur */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permet le redimensionnement vertical */
+    min-height: 120px; /* Hauteur minimale pour la zone de texte */
+}
+
+.submit-button {
+    width: 100%; 
+    margin-top: 2rem; /* Plus d'espace au-dessus du bouton */
+    padding: 1rem 2.5rem; /* Padding du bouton conservé */
+}
