@@ -1,0 +1,110 @@
+
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Mayip Diop</title>
+    <link rel="stylesheet" href="/CSS/sltye1.css">
+
+    <meta name="description" content="CV en ligne de Mouhamadou DIALLO : Développeur Web Full-Stack. Découvrez mes projets en HTML, CSS et JavaScript.">
+    <meta name="keywords" content="Mouhamadou DIALLO, CV, Développeur Web, HTML, CSS, JavaScript, Portfolio, Dakar, Développeur Web Junior">
+
+    <meta property="og:title" content="Mouhamadou DIALLO | CV Développeur Web">
+    <meta property="og:description" content="Découvrez mon CV et portfolio interactif en ligne (HTML, CSS, JS).">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[VOTRE URL COMPLÈTE EN LIGNE, ex: https://mouhamadoudiallo-cv.com]">
+    <meta property="og:image" content="[VOTRE URL COMPLÈTE]/IMAGES/RASSOULH.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mouhamadou DIALLO | CV Développeur Web">
+    <meta name="twitter:description" content="Découvrez mon CV et portfolio interactif en ligne (HTML, CSS, JS).">
+    <meta name="twitter:image" content="[VOTRE URL COMPLÈTE]/IMAGES/RASSOULH.jpg">
+    <meta name="twitter:site" content="@[VotrePseudoTwitter_SiVousEnAvezUn]"> 
+    
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="Page.HTML" target="_blank">Mon CV</a></li>
+            <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="accueil" class="section visible">
+        <div id="contenu" class="photo-texte">
+            <img src="/IMAGES/RASSOULH.jpg" alt="Photo de Mouhamadou DIALLO" id="photoProfil">
+            <div class="texte">
+                <p>Mouhamadou DIALLO</p>
+                <h1 id="nomPrenom"></h1>
+            </div>
+        </div>
+    </section>
+
+    <button id="backToTop">↑</button>
+
+    <script>
+        // ... Insérez ici le code JavaScript **corrigé** pour l'effet de frappe (typing())
+        // ... et le code pour l'animation au scroll et le bouton backToTop.
+    </script>
+
+</body>
+</html>
+
+ <script>
+    // Effet de texte tapé (CORRIGÉ ET ROBUSTE)
+    // On utilise <br> pour le saut de ligne.
+    const texteComplet = "Ravi de vous accueillir dans mon espace.<br>Veuillez explorer mon univers professionnel.";
+    
+    // L'élément cible (h1) reste le même
+    const titreH1 = document.getElementById("nomPrenom");
+    
+    let index = 0;
+    
+    function typing() {
+        if (index < texteComplet.length) {
+            index++;
+            
+            // On utilise innerHTML pour interpréter <br>
+            titreH1.innerHTML = texteComplet.substring(0, index);
+            
+            // Rappel de la fonction pour le prochain caractère
+            setTimeout(typing, 50);
+        } else {
+            // AJOUT : Si l'animation est terminée, s'assurer que le contenu est complet
+            // C'est souvent utile pour les chaînes contenant du HTML (comme <br>)
+            setTimeout(() => {
+                titreH1.innerHTML = texteComplet;
+            }, 100); 
+        }
+    }
+    
+    // Démarre l'effet de frappe
+    typing();
+    
+    // ------------------------------------------------------------------
+    // Reste de votre code (Animation au scroll et Bouton retour en haut)
+    
+    const sections = document.querySelectorAll('.section');
+    function revealSections() {
+      const windowHeight = window.innerHeight;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < windowHeight - 100){
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('load', revealSections);
+
+    const backToTop = document.getElementById("backToTop");
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+</script>

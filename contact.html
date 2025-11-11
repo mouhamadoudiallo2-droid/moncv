@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        </header>
+
+    <main class="contact-section">
+        <div class="contact-card">
+            <h2>Contactez-moi</h2>
+            <p class="tagline">Envoyez-moi un message pour toute demande d'information ou collaboration.</p>
+
+            <p id="message-status" class="hidden-status"></p>
+
+            <form action="#" method="POST" id="contact-form" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="name">Votre Nom :</label>
+                    <input type="text" id="name" name="name" required placeholder="Ex: Dupont Jean">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Votre Email :</label>
+                    <input type="email" id="email" name="email" required placeholder="Ex: votre.email@domaine.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Sujet :</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Ex: Demande de collaboration">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Écrivez votre message ici..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button cta-button">
+                    Envoyer le Message
+                </button>
+                
+            </form>
+        </div>
+    </main>
+    <a href="index.html">accueil</a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const statusMessage = document.getElementById('message-status');
+
+            form.addEventListener('submit', function(event) {
+                // 1. Empêche l'envoi réel du formulaire (car nous n'avons pas de serveur backend)
+                event.preventDefault(); 
+                
+                // 2. Le HTML gère déjà les champs required, donc si le navigateur arrive ici, 
+                //    c'est que les champs sont remplis (ou non gérés par le navigateur)
+
+                // 3. Simule l'envoi réussi
+                statusMessage.textContent = "Votre message a été envoyé avec succès !";
+                statusMessage.classList.remove('hidden-status', 'error');
+                statusMessage.classList.add('success');
+                
+                // Optionnel : Réinitialise le formulaire après 3 secondes
+                setTimeout(() => {
+                    form.reset();
+                    statusMessage.classList.add('hidden-status');
+                }, 3000); 
+            });
+        });
+    </script>
+
+</body>
+</html>

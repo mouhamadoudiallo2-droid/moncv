@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science et Curiosité</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+        /* (Le style CSS est conservé, car il est correct) */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+        header {
+            text-align: center;
+            background: #111;
+            color: white;
+            padding: 40px 0;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        header i {
+            color: #00BFFF; 
+            margin-right: 10px;
+        }
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        p { 
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        /* Style des cartes pour correspondre à "Développement Web" */
+        .image-card {
+            width: 320px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden; 
+            transition: transform 0.3s;
+            display: flex; 
+            flex-direction: column;
+            text-align: center; 
+        }
+        .image-card:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Style des images dans les cartes */
+        .image-card img {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover; 
+            margin-bottom: 10px; 
+        }
+
+        /* Style pour le titre de la carte */
+        .image-card h3 {
+            margin: 0 15px 10px; 
+            color: #333; 
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Style du paragraphe de description */
+        .image-card p {
+            padding: 0 15px 15px; 
+            font-size: 15px;
+            text-align: center; 
+            flex-grow: 1; 
+        }
+
+        /* Styles des liens (informations et retour) */
+        .lien-info {
+            display: inline-block;
+            background: #28a745; 
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 40px;
+            transition: background 0.3s;
+        }
+        .lien-info:hover {
+            background: #218838;
+        }
+        
+        .btn-retour {
+            display: inline-block;
+            background: #6c757d; 
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px; 
+            transition: background 0.3s;
+        }
+        .btn-retour:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+<header><i class='bx bx-atom'></i> SCIENCE ET CURIOSITÉ</header>
+
+<section>
+    <p style="max-width: 800px; margin: 0 auto 40px;">
+        Passionné par la **connaissance** et l'étude des systèmes, je suis fasciné par la science, car elle permet de décrypter le monde, de repousser les limites de la compréhension et d'innover de manière concrète.
+    </p>
+
+    <div class="images-container">
+
+        <div class="image-card">
+            <img src="./images/maths.jpg" alt="Formules Mathématiques"> 
+            <h3>Formules Mathématiques</h3> 
+            <p>J'apprécie l'étude des **structures logiques** et des **principes mathématiques** qui sous-tendent les algorithmes informatiques et la modélisation du monde réel.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="./images/espace.jpg" alt="Étoiles et Espace">
+            <h3>Étoiles et Espace</h3>
+            <p>Je m'intéresse à la **science des données** et à l'astronomie. J'étudie comment l'analyse de grands volumes de données nous aide à comprendre les phénomènes complexes.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="./images/cerveau.jpg" alt="Neurosciences et Cerveau">
+            <h3>Neurosciences et Cerveau</h3>
+            <p>Je lis sur la manière dont les **Neurosciences** et l'IA sont utilisées pour créer des systèmes et des interfaces toujours plus performantes et intuitives.</p>
+        </div>
+
+    </div>
+
+    <p style="margin-top: 40px; max-width: 800px; margin: 40px auto;">
+        La science est le moteur de l'innovation. En explorant ses diverses branches, je renforce ma capacité d'analyse et ma pensée critique, essentielle pour le développement de solutions technologiques.
+    </p>
+
+    <a class="lien-info" href="https://www.futura-sciences.com/" target="_blank">
+        Explorer les actualités scientifiques →
+    </a>
+
+    <br>
+    <a class="btn-retour" href="Page.HTML">⬅ Retour au CV</a>
+</section>
+
+</body>
+</html>

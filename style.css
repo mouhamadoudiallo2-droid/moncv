@@ -1,0 +1,399 @@
+/* --- VARIABLES ET RESET (COMMUN À TOUTES LES PAGES) --- */
+:root {
+    --primary-color: #007bff; /* Bleu professionnel et dynamique */
+    --secondary-color: #343a40; /* Couleur sombre pour le texte/fond de navigation */
+    --text-color: #333;
+    --tagline-color: #5a6268; 
+    --background-light: #f8f9fa; /* Fond général très clair */
+    --background-white: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #e6e6e6;
+    color: #333;
+    line-height: 1.5;
+    /* ESSENTIEL pour le responsive : empêche le débordement horizontal */
+    overflow-x: hidden; 
+}
+
+/* ---------------------------------------------------------------------- */
+/* ------------------------ STYLES DU CV (PAGE CV) ---------------------- */
+/* ---------------------------------------------------------------------- */
+
+/* === CONTAINER PRINCIPAL === */
+.cv-container {
+    display: flex; /* Active la disposition en deux colonnes */
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* === COLONNE GAUCHE (Sidebar) === */
+.cv-gauche {
+    background-color: #2f3640;
+    color: #fff;
+    width: 35%;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cv-gauche img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.cv-gauche h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.cv-gauche .titre {
+    font-size: 17px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.cv-gauche h3 {
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.cv-gauche p,
+.cv-gauche li {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #f0f0f0;
+    text-align: left;
+    list-style: none; /* Correction pour s'assurer que les ul/li ne débordent pas */
+}
+
+.cv-gauche ul {
+    list-style: none;
+    width: 100%;
+    padding-left: 0;
+}
+
+/* --- LANGUES --- */
+.langues .langue {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.barre {
+    /* Largeur 200% est un style de bureau, sera corrigé en responsive */
+    width: 200%; 
+    height: 8px;
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.niveau {
+    height: 100%;
+    width: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: width 6s ease-in-out;
+}
+
+/* --- INTERETS --- */
+.cv-gauche .interets ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cv-gauche .interets li {
+    font-size: 14px;
+    background: #414b57;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.cv-gauche .interets a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- COLONNE DROITE (Contenu Principal) --- */
+.cv-droite {
+    width: 65%;
+    padding: 40px 50px;
+}
+
+.cv-droite h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    background-color: #2f3640;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.cv-droite p,
+.cv-droite li {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.cv-droite ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.presentation,
+.experience,
+.formation {
+    margin-bottom: 30px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --------------------- STYLES DU FORMULAIRE (PAGE CONTACT) ------------ */
+/* ---------------------------------------------------------------------- */
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 1rem;
+    min-height: 100vh;
+    /* Couleur d'arrière-plan claire pour un contraste optimal avec le formulaire blanc */
+    background-color: #74ebd5; 
+}
+
+.contact-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-card h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-card .tagline {
+    color: var(--tagline-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* --- Éléments de Formulaire --- */
+.contact-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="subject"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* --- Bouton CTA (Utilisé pour le bouton d'envoi) --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    text-decoration: none;
+    padding: 0.9rem 2.5rem; 
+    border-radius: 50px; 
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+    /* Ajouté pour le bouton de soumission */
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 20px rgba(0, 123, 255, 0.4);
+}
+
+.submit-button {
+    width: 100%; 
+    margin-top: 2rem;
+    /* Hérite du style .cta-button */
+}
+
+
+/* ---------------------------------------------------------------------- */
+/* ------------------ NAVIGATION FIXE DU BAS (COMMUN) ------------------- */
+/* ---------------------------------------------------------------------- */
+
+.fixed-bottom-nav {
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    background-color: var(--background-white); 
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 15px 0;
+    display: flex;
+    justify-content: center; 
+    z-index: 1000; 
+}
+
+.footer-nav-item {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 20px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.footer-nav-item:hover {
+    color: var(--primary-color);
+}
+
+/* ---------------------------------------------------------------------- */
+/* ---------------------- MEDIA QUERIES (RESPONSIVE) -------------------- */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    
+    /* === CV PRINCIPAL === */
+    .cv-container {
+        flex-direction: column; /* Casse la mise en page en deux colonnes */
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .cv-gauche,
+    .cv-droite {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Centrage du contenu dans la colonne de gauche */
+    .cv-gauche {
+        align-items: center; 
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    
+    .cv-gauche img {
+        width: 120px; 
+        height: 120px;
+    }
+
+    .cv-gauche h2,
+    .cv-gauche .titre {
+        text-align: center; 
+    }
+
+    .cv-gauche h3 {
+        text-align: center;
+    }
+    
+    /* Correction de l'alignement pour les blocs de texte (contact, compétences...) */
+    .contact,
+    .competences,
+    .langues {
+        width: 90%; 
+        margin: 15px auto; 
+        text-align: left;
+    }
+
+    /* CORRECTION CRUCIALE pour le débordement des barres de langue */
+    .barre {
+        width: 100%; 
+    }
+    
+    /* Intérêts : Centrer les boutons */
+    .cv-gauche .interets ul {
+        justify-content: center;
+        padding: 0;
+    }
+    
+    /* Espace supplémentaire pour la navigation fixe du bas */
+    .cv-droite {
+        padding-bottom: 90px; 
+    }
+
+    /* === FORMULAIRE DE CONTACT (ASSURE SA PLEINE LARGEUR) === */
+    .contact-card {
+        padding: 1.5rem 1rem; /* Réduire le padding de la carte */
+        box-shadow: none; /* Enlever l'ombre pour le mobile */
+    }
+
+    /* S'assurer que le formulaire s'adapte bien */
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+    }
+}

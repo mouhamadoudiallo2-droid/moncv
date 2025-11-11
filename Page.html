@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Mouhamadou Diallo</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="cv-container"> <!-- SECTION GAUCHE -->
+        <div class="cv-gauche">
+            <div class="profil"> <img src="../IMAGES/RASSOULH1.png" alt="Photo de profil">
+                <h2>Mouhamadou DIALLO</h2>
+                <p class="titre">Étudiant en Licence 2 Informatique</p>
+            </div>
+            <div class="contact">
+                <h3>CONTACT</h3>
+                <p><i class='bx bx-envelope'></i> mouhamadou.diallo2@univ-thies.sn</p>
+                <p><i class='bx bx-phone-call'></i> 76 578 33 52</p>
+                <p><i class='bx bxs-calendar'></i> 12 Octobre 2002</p>
+                <p><i class='bx bxs-map'></i> Guédiawaye Medina Gounass</p>
+            </div>
+          <div class="langues">
+  <h3>LANGUES PARLÉES</h3>
+
+  <div class="langue">
+    <p>Français</p>
+    <div class="barre">
+      <div class="niveau" data-value="95"></div>
+    </div>
+  </div>
+
+  <div class="langue">
+    <p>Anglais</p>
+    <div class="barre">
+      <div class="niveau" data-value="70"></div>
+    </div>
+  </div>
+
+  <div class="langue">
+    <p>Espagnol</p>
+    <div class="barre">
+      <div class="niveau" data-value="50"></div>
+    </div>
+  </div>
+</div>
+            <div class="competences">
+                <h3>COMPÉTENCES TECHNIQUES</h3>
+                <ul>
+                    <li><i class='bx bxs-star'></i> MySQL</li>
+                    <li><i class='bx bxs-star'></i> Langage C</li>
+                    <li><i class='bx bxs-star'></i> Outils bureautiques (Word, Excel, PowerPoint)</li>
+                    <li><i class='bx bxs-star'></i> Développement Web (HTML, CSS)</li>
+                </ul>
+            </div>
+            <div class="interets">
+                <h3> CENTRE D'INTÉRÊTS</h3>
+                <ul class="icones">
+                    <li><a href="cybersecurité.html">📚 Cybersecurite </a></li>
+                    <li><a href="devweb.html">💻 Dev Web</a></li>
+                    <li><a href="Sciences.html">  Sciences</a></li>
+    
+                </ul>
+            </div>
+        </div> <!-- SECTION DROITE -->
+        <div class="cv-droite">
+           <section class="presentation">
+  <h2>PRÉSENTATION</h2>
+  <p id="presentation-text"></p>
+</section>
+            
+            <section class="experience">
+                <h2>EXPÉRIENCES PROFESSIONNELLES</h2>
+                <ul>
+                    <li> <strong>Projet universitaire :</strong><br>
+                        <p>Application de gestion des prêts dans une bibliothèque universitaire.</p>
+                        <p><strong>Google Workspace</strong></p>
+                    </li>
+                    <li> <strong>Projet personnel :</strong><br>
+                        <p>Conception d’une application Angular pour la gestion des inscriptions des étudiants.</p>
+                        <p><strong>(CSS, HTML, JS)</strong></p>
+                    </li>
+                    <li> <strong>Travail extra-professionnel :</strong><br>
+                        <p>Gérant (comptable) dans un magasin au Lac Rose.</p>
+                    </li>
+                    <li> <strong>Expérience manuelle :</strong><br>
+                        <p>Participation à la construction de bâtiments à Dakar.</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="formation">
+                <h2>DIPLÔMES & FORMATIONS</h2>
+                <ul>
+                    <li><strong>2025/2026 :</strong> Licence 2 Informatique — UIDT</li>
+                    <li><strong>2022/2023 :</strong> Baccalauréat — Lycée Serigne Bassirou Bara Mbacké, Pikine</li>
+                    <li><strong>2016/2017 :</strong> BFEM — CEM Parcelles Assainies Unité 5</li>
+                    <li><strong>2012/2013 :</strong> CFEE — École PAG/B</li>
+                </ul>
+            </section>
+            <section class="liens">
+               <nav>
+    
+  </nav>
+            </section>
+        </div>
+    </div>
+   
+    <script>
+  const text = " Bonjour je me nomme Mouhamadou DIALLO étudiant en deuxième année de Licence Informatique à l’Université Iba Der Thiam de Thiès, passionné par l'informatique . Je suis motivé, curieux et prêt à mettre mes compétences techniques et mon sens de l’organisation au service de projets innovants.";
+ index = 0;
+  const speed = 40; // vitesse d'écriture (ms)
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("presentation-text").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  window.onload = typeWriter; // Démarre l'effet dès que la page est chargée
+</script>
+<script>
+window.addEventListener('load', () => {
+  const niveaux = document.querySelectorAll('.niveau');
+  niveaux.forEach(niveau => {
+    const valeur = niveau.getAttribute('data-value');
+    niveau.style.width = valeur + '%';
+  });
+});
+</script>
+<script>
+  window.addEventListener("load", () => {
+    const icons = document.querySelectorAll(".contact i");
+    icons.forEach((icon, index) => {
+      setTimeout(() => {
+    icon.style.animation = "pulseColor 1s infinite alternate";
+      }, index * 400); // chaque icône démarre un peu après la précédente
+    });
+  });
+</script>
+<footer class="fixed-bottom-nav">
+        <a href="index.html" class="footer-nav-item">Accueil</a>
+        <a href="Page.HTML" class="footer-nav-item">Mon CV</a>
+        <a href="contact.html" class="footer-nav-item">Contact</a>
+    </footer>
+</body>
+
+</html>
