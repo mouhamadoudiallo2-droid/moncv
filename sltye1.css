@@ -1,134 +1,200 @@
-css: /* ==========================
-   STYLE GLOBAL
+/* ==========================
+    STYLE GLOBAL
 ========================== */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    /* Poppins est maintenant importée dans le HTML, elle est bien utilisée ici */
+    font-family: "Poppins", "Segoe UI", sans-serif; 
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* ==========================
-   MENU DE NAVIGATION
+    MENU DE NAVIGATION
 ========================== */
 nav {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  padding: 15px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-  z-index: 100;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    z-index: 100;
 }
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 nav ul li {
-  margin: 0 25px;
+    margin: 0 25px;
 }
 nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-  transition: 0.3s;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.3s;
 }
 nav ul li a:hover {
-  color: #ffb400;
-  text-shadow: 0 0 10px #ffb400;
+    color: #ffb400;
+    text-shadow: 0 0 10px #ffb400;
 }
 
 /* ==========================
-   SECTION ACCUEIL
+    SECTION ACCUEIL (Général)
 ========================== */
+#accueil {
+    min-height: 80vh; 
+    padding: 120px 20px 80px; /* Ajusté pour laisser de la place au nav */
+    background: #74ebd5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 section {
-  width: 100%;
-  padding: 120px 20px 80px;
-  display: flex;
-  justify-content: center;
-  background:  #74ebd5; ;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+    width: 100%;
+    /* Styles pour l'animation au scroll */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 .section.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Photo + texte */
 .photo-texte {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 90%; 
+    max-width: 1000px; 
 }
 #photoProfil {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 .texte p {
-  font-size: 1.8em;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
 }
 .texte h1 {
-  font-size: 1.5em;
-  font-weight: 500;
-  border-right: 3px solid #333;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: blink 0.7s step-end infinite alternate;
+    font-size: 1.5em;
+    font-weight: 500;
+    
+    /* 🛠️ CORRIGÉ : Styles pour l'effet de frappe */
+    border-right: 3px solid #333; /* Simulateur de curseur */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink 0.7s step-end infinite alternate;
 }
 
 /* Animation curseur */
 @keyframes blink {
-  50% { border-color: transparent; }
+    50% { border-color: transparent; }
 }
 
-/* Bouton retour en haut */
+/* ==========================
+    Bouton retour en haut
+========================== */
 #backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 10px 15px;
-  font-size: 18px;
-  background: #0099ff;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 5px 15px rgba(0, 153, 255, 0.4);
-  transition: all 0.3s ease;
-  z-index: 200;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 15px;
+    font-size: 18px;
+    background: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 153, 255, 0.4);
+    transition: all 0.3s ease;
+    z-index: 200;
 }
 #backToTop:hover {
-  background: #22c55e;
-  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.5);
+    background: #22c55e;
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.5);
 }
 
-/* Responsive */
+/* ==========================
+    Responsive
+========================== */
+/* Pour les écrans de taille moyenne (max-width: 1024px) */
+@media (max-width: 1024px) {
+    #photoProfil {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Pour les petits écrans (max-width: 768px) - Mobile/Tablette */
 @media (max-width: 768px) {
-  .photo-texte {
-    flex-direction: column;
-    text-align: center;
-  }
-  .texte p, .texte h1 {
-    text-align: center;
-  }
+    /* Navigation */
+    nav ul li {
+        margin: 0 10px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+    
+    /* Accueil : Layout en colonne */
+    .photo-texte {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px; 
+    }
+
+    /* Image */
+    #photoProfil {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Texte centré */
+    .texte p, .texte h1 {
+        text-align: center;
+    }
+
+    /* Titre (Animation de frappe) */
+    .texte h1 {
+        font-size: 1.3em;
+        white-space: normal; /* Permet le retour à la ligne si le texte est long */
+        /* Pour s'assurer que le curseur clignotant est toujours visible */
+        display: inline-block; 
+    }
+}
+
+/* Pour les très petits écrans (max-width: 480px) */
+@media (max-width: 480px) {
+    nav ul {
+        flex-wrap: wrap; 
+    }
+    #accueil {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    #photoProfil {
+        width: 150px;
+        height: 150px;
+    }
 }
